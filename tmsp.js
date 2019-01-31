@@ -1,4 +1,8 @@
 /// Tommy Micro Service Promise
+window.HeaderConstants = {
+    URI: 'XV-URI', 
+    METHOD: 'XV-METHOD'
+};
 /**
  * 请求数据
  * @param {string} url 请求服务的地址
@@ -22,8 +26,8 @@ function Tmsp(url, method, data, loadingParams) {
                 if (loadingParams) {
                     loadingParams.dom.loading(loadingParams.params);
                 }
-                req.setRequestHeader('V-Req-Method', method);
-                req.setRequestHeader('V-Req-Uri', uri);
+                req.setRequestHeader(HeaderConstants.METHOD, method);
+                req.setRequestHeader(HeaderConstants.URI, uri);
             },
             success: function(result) {
                 if (loadingParams) {
