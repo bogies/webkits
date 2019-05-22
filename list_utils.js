@@ -68,5 +68,23 @@ window.ListUtils = {
         }
 
         return -1;
+    }, 
+    /**
+     * 获取指定项第一个匹配节点
+     * @param list 要查找的列表
+     * @param itemName 要判断的项名称
+     * @param value 要判断的值
+     * @returns 对应值的节点; null 未找到
+     */
+    getItem: function (list, itemName, value) {
+        var i = 0;
+        var len = list.length;
+        for (; i!=len; ++i) {
+            if (list[i][itemName] == value) {
+                return list[i];
+            }
+        }
+
+        return null;
     }
 };
